@@ -1,73 +1,37 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InfoTechSagar - Mobile Deals</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InfoTechSagar Mobiles</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-700">InfoTechSagar</h1>
-      <nav class="space-x-4">
-        <a href="#" class="text-sm hover:text-blue-700 font-medium">Home</a>
-        <a href="#" class="text-sm hover:text-blue-700 font-medium">Mobiles</a>
-        <a href="#" class="text-sm hover:text-blue-700 font-medium">Login</a>
-      </nav>
-    </div>
-  </header>  <!-- Hero Section -->  <section class="bg-blue-100 py-10">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-2">Find Best Deals on New Mobiles</h2>
-      <p class="text-gray-700">Compare prices, specs & reviews. Buy directly from Amazon or Flipkart!</p>
-    </div>
-  </section>  <!-- Product Grid -->  <section class="max-w-7xl mx-auto px-4 py-10">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
-      <!-- Products will be injected here by JavaScript -->
-    </div>
-  </section>  <!-- Footer -->  <footer class="bg-white border-t py-6 mt-10 text-center text-sm text-gray-600">
-    &copy; 2025 InfoTechSagar.in. All rights reserved.
-  </footer>  <script>
-    const products = [
-      {
-        name: "Redmi Note 13 Pro",
-        image: "https://m.media-amazon.com/images/I/71w7JbNmURL._SX679_.jpg",
-        specs: "6.67\" AMOLED | Snapdragon 7s Gen 2 | 5000mAh",
-        amazon: "https://amzn.to/example1",
-        flipkart: "https://www.flipkart.com/example1"
-      },
-      {
-        name: "Samsung Galaxy M14 5G",
-        image: "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SX679_.jpg",
-        specs: "6.6\" LCD | Exynos 1330 | 6000mAh",
-        amazon: "https://amzn.to/example2",
-        flipkart: "https://www.flipkart.com/example2"
-      },
-      {
-        name: "iQOO Z9 5G",
-        image: "https://m.media-amazon.com/images/I/71v2jVh6nIL._SX679_.jpg",
-        specs: "6.67\" AMOLED | Dimensity 7200 | 5000mAh",
-        amazon: "https://amzn.to/example3",
-        flipkart: "https://www.flipkart.com/example3"
-      }
-    ];
+<body>
+  <header>
+    <h1>📱 InfoTechSagar Mobiles</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Mobiles</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
 
-    const grid = document.getElementById("product-grid");
-    products.forEach(p => {
-      const card = document.createElement("div");
-      card.className = "bg-white shadow rounded-lg overflow-hidden";
-      card.innerHTML = `
-        <img src="${p.image}" class="w-full h-60 object-cover" alt="${p.name}">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">${p.name}</h3>
-          <p class="text-sm text-gray-600 mb-4">${p.specs}</p>
-          <div class="flex space-x-2">
-            <a href="${p.amazon}" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm px-3 py-1 rounded">Buy on Amazon</a>
-            <a href="${p.flipkart}" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-1 rounded">Buy on Flipkart</a>
-          </div>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-  </script></body>
+  <main>
+    <section class="mobile-listing">
+      <div class="mobile-card">
+        <img src="https://m.media-amazon.com/images/I/61amb0CfMGL._AC_SL1500_.jpg" alt="Mobile" />
+        <h2>Redmi Note 13 Pro</h2>
+        <p>6.67" AMOLED | 8GB RAM | 256GB Storage</p>
+        <a href="#" class="buy-btn">Buy Now</a>
+      </div>
+      <!-- Add more cards later -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 InfoTechSagar</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
