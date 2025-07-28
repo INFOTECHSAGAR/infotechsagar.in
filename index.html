@@ -1,41 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InfoTechSagar - Mobile Deals</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 text-gray-800">
-
-  <!-- Navbar -->
-  <nav class="bg-black text-white p-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold">InfoTechSagar</h1>
-    <div class="space-x-4">
-      <a href="#" class="hover:text-yellow-400">Home</a>
-      <a href="#" class="hover:text-yellow-400">Login</a>
-      <a href="#" class="hover:text-yellow-400">Signup</a>
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-700">InfoTechSagar</h1>
+      <nav class="space-x-4">
+        <a href="#" class="text-sm hover:text-blue-700 font-medium">Home</a>
+        <a href="#" class="text-sm hover:text-blue-700 font-medium">Mobiles</a>
+        <a href="#" class="text-sm hover:text-blue-700 font-medium">Login</a>
+      </nav>
     </div>
-  </nav>
-
-  <!-- Search -->
-  <div class="p-4 bg-white shadow-md">
-    <input type="text" placeholder="Search for mobiles..." class="w-full p-2 border rounded-md" />
-  </div>
-
-  <!-- Mobile Listings -->
-  <section class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <!-- Mobile Card Example -->
-    <div class="bg-white p-4 shadow rounded-lg">
-      <img src="https://via.placeholder.com/200x150" alt="Mobile Image" class="mb-2 rounded" />
-      <h2 class="text-lg font-semibold">Samsung Galaxy A14</h2>
-      <p class="text-sm text-gray-500">4GB RAM | 64GB | 5000mAh</p>
-      <p class="mt-1 font-bold text-green-600">₹12,499</p>
-      <a href="#" class="mt-2 inline-block bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-600">Buy Now</a>
+  </header>  <!-- Hero Section -->  <section class="bg-blue-100 py-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-2">Find Best Deals on New Mobiles</h2>
+      <p class="text-gray-700">Compare prices, specs & reviews. Buy directly from Amazon or Flipkart!</p>
     </div>
+  </section>  <!-- Product Grid -->  <section class="max-w-7xl mx-auto px-4 py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
+      <!-- Products will be injected here by JavaScript -->
+    </div>
+  </section>  <!-- Footer -->  <footer class="bg-white border-t py-6 mt-10 text-center text-sm text-gray-600">
+    &copy; 2025 InfoTechSagar.in. All rights reserved.
+  </footer>  <script>
+    const products = [
+      {
+        name: "Redmi Note 13 Pro",
+        image: "https://m.media-amazon.com/images/I/71w7JbNmURL._SX679_.jpg",
+        specs: "6.67\" AMOLED | Snapdragon 7s Gen 2 | 5000mAh",
+        amazon: "https://amzn.to/example1",
+        flipkart: "https://www.flipkart.com/example1"
+      },
+      {
+        name: "Samsung Galaxy M14 5G",
+        image: "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SX679_.jpg",
+        specs: "6.6\" LCD | Exynos 1330 | 6000mAh",
+        amazon: "https://amzn.to/example2",
+        flipkart: "https://www.flipkart.com/example2"
+      },
+      {
+        name: "iQOO Z9 5G",
+        image: "https://m.media-amazon.com/images/I/71v2jVh6nIL._SX679_.jpg",
+        specs: "6.67\" AMOLED | Dimensity 7200 | 5000mAh",
+        amazon: "https://amzn.to/example3",
+        flipkart: "https://www.flipkart.com/example3"
+      }
+    ];
 
-    <!-- Add more cards below -->
-  </section>
-
-</body>
+    const grid = document.getElementById("product-grid");
+    products.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "bg-white shadow rounded-lg overflow-hidden";
+      card.innerHTML = `
+        <img src="${p.image}" class="w-full h-60 object-cover" alt="${p.name}">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">${p.name}</h3>
+          <p class="text-sm text-gray-600 mb-4">${p.specs}</p>
+          <div class="flex space-x-2">
+            <a href="${p.amazon}" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white text-sm px-3 py-1 rounded">Buy on Amazon</a>
+            <a href="${p.flipkart}" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-1 rounded">Buy on Flipkart</a>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  </script></body>
 </html>
